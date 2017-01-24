@@ -24,7 +24,7 @@ $(document).ready(function(){
             var array_peliculas = data.Search;
             $(".contenedor").empty();
             for(i in array_peliculas){
-                if(i.Poster == "N/A"){
+                if(array_peliculas[i].Poster == "N/A"){
                    $(".contenedor").append($("<img class=card pelicula src=imagenes/error.png >")); 
                 }else{
                     $(".contenedor").append($("<img class=card pelicula src="+array_peliculas[i].Poster+">"));  
@@ -40,7 +40,7 @@ $(document).ready(function(){
         $.getJSON("http://www.omdbapi.com/?s="+titulo+"&page="+pagina,function(data){
             var array_peliculas = data.Search;
             for(i in array_peliculas){
-                if(i.Poster == "N/A"){
+                if(array_peliculas[i].Poster == "N/A"){
                     $(".contenedor").append($("<img class=card pelicula src=imagenes/error.png >")); 
                 }else{
                     $(".contenedor").append($("<img class=card pelicula src="+array_peliculas[i].Poster+">"));  
